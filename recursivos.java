@@ -53,4 +53,12 @@ Caso recursivo
     return fibonacci(n-1) + fibonacci (n-2);
     
  }
+/*
+ SOMATORIO INTERVALO
+ Caso base | Se um número maior que outro apenas uma unidade, retorna 0, o mesmo se forem iguais.
+ Cas
+ */
+ static public int intervalo(int x, int y){
+
+ }
  
