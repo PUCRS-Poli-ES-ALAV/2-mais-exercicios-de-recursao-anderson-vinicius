@@ -2,6 +2,7 @@ public static void main(String [] args){
     System.out.println("Fatorial de 10: " + fatorial(10));
     System.out.println("Somatorio de 10: " + somatorio(-10));
     System.out.println("Sétimo elemento da sequencia de fibonacci: " + fibonacci(7));
+    System.out.println("Soma intervalo entre 15 e 10: "+ intervalo(15, 10));
 }
 
 
@@ -55,10 +56,12 @@ Caso recursivo
  }
 /*
  SOMATORIO INTERVALO
- Caso base | Se um número maior que outro apenas uma unidade, retorna 0, o mesmo se forem iguais.
- Cas
+ Caso base | X == Y -> X
  */
  static public int intervalo(int x, int y){
-
+    if (x == y) return x;
+    if (x < y) return y + intervalo(x-1, y);
+    return x + intervalo(x-1, y);
  }
+
  
