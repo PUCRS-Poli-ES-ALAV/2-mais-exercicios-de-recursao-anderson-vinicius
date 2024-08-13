@@ -3,6 +3,7 @@ public static void main(String [] args){
     System.out.println("Somatorio de 10: " + somatorio(-10));
     System.out.println("Sétimo elemento da sequencia de fibonacci: " + fibonacci(7));
     System.out.println("Soma intervalo entre 15 e 10: "+ intervalo(15, 10));
+    System.out.println("A palavra Renner é palíndromo?: "+ palindromo("Renner"));
 }
 
 
@@ -62,6 +63,22 @@ Caso recursivo
     if (x == y) return x;
     if (x < y) return y + intervalo(x-1, y);
     return x + intervalo(x-1, y);
+ }
+
+
+/*
+ PALINDROMO
+ Caso base | Apenas um caractere ou nenhum caractere
+ */
+
+ static public boolean palindromo (String palavra){
+    palavra = palavra.toLowerCase();
+    int nCaracteres = palavra.length();
+    if (nCaracteres == 1 || nCaracteres == 0) return true;
+    else if (palavra.charAt(0) == palavra.charAt(nCaracteres-1)){
+            return palindromo (palavra.substring(1, nCaracteres-1));
+        }
+    return false;
  }
 
  
