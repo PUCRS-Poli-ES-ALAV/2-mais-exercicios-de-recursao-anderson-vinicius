@@ -4,6 +4,7 @@ public static void main(String [] args){
     System.out.println("Sétimo elemento da sequencia de fibonacci: " + fibonacci(7));
     System.out.println("Soma intervalo entre 15 e 10: "+ intervalo(15, 10));
     System.out.println("A palavra Renner é palíndromo?: "+ palindromo("Renner"));
+    System.out.println("A conversão do número 8 para binário: " + binario(8));
 }
 
 
@@ -80,5 +81,19 @@ Caso recursivo
         }
     return false;
  }
+
+/*
+BINARIO
+Caso base | N == 0 -> 0 ou N == 1 -> 1
+Caso de erro | N < 0
+*/
+
+static public String binario (int n){
+    if (n < 0) return "erro";
+    if (n==0) return "0";
+    if (n==1) return "1";
+    return binario (n / 2) + (n % 2);
+
+}
 
  
