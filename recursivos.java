@@ -1,10 +1,21 @@
+import java.util.ArrayList;
 public static void main(String [] args){
-    System.out.println("Fatorial de 10: " + fatorial(-5));
-    System.out.println("Somatorio de 10: " + somatorio(-10));
+    System.out.println("Fatorial de 10: " + fatorial(10));
+    System.out.println("Somatorio de 10: " + somatorio(10));
     System.out.println("Sétimo elemento da sequencia de fibonacci: " + fibonacci(7));
     System.out.println("Soma intervalo entre 15 e 10: "+ intervalo(15, 10));
     System.out.println("A palavra Renner é palíndromo?: "+ palindromo("Renner"));
     System.out.println("A conversão do número 8 para binário: " + binario(8));
+
+    ArrayList<Integer> lista = new ArrayList<>();
+    lista.add(10);
+    lista.add(93);
+    lista.add(4);
+    lista.add(78);
+    lista.add(1400);
+    lista.add(643);
+
+    System.out.println("Somatorio da lista: " + somatorioLista(lista));
 }
 
 
@@ -96,4 +107,17 @@ static public String binario (int n){
 
 }
 
+/*
+ Caso base | tamanho da lista == 1 -> 1 ou tamanho da lista == 0 -> 0
+ */
+static public int somatorioLista(ArrayList<Integer> numeros){
+    int tamanho = numeros.size();
+    if (tamanho == 1) return numeros.get(0);
+    else if (tamanho == 0) return 0;
+
+    numeros.add(numeros.get(0) + numeros.get(1));
+    numeros.remove(0);
+    numeros.remove(0);
+    return somatorioLista(numeros);
+}
  
