@@ -1,5 +1,5 @@
 public static void main(String [] args){
-    System.out.println("Fatorial de 10: " + fatorial(10));
+    System.out.println("Fatorial de 10: " + fatorial(-5));
     System.out.println("Somatorio de 10: " + somatorio(-10));
     System.out.println("Sétimo elemento da sequencia de fibonacci: " + fibonacci(7));
     System.out.println("Soma intervalo entre 15 e 10: "+ intervalo(15, 10));
@@ -19,7 +19,7 @@ static public int fatorial(int n){
         return 1;
     }
     else if (n <= 0){
-        return -1;
+        throw new IllegalArgumentException("O número não pode ser negativo nem zero.");
     }
 
     return n * fatorial(n-1);
@@ -51,7 +51,7 @@ Caso recursivo
     if (n < 2){
         return n;
     }else if (n < 0){
-        return -1;
+        throw new IllegalArgumentException("O número não pode ser negativo.");
     }
     return fibonacci(n-1) + fibonacci (n-2);
     
@@ -89,7 +89,7 @@ Caso de erro | N < 0
 */
 
 static public String binario (int n){
-    if (n < 0) return "erro";
+    if (n < 0) throw new IllegalArgumentException("O número não pode ser negativo.");
     if (n==0) return "0";
     if (n==1) return "1";
     return binario (n / 2) + (n % 2);
