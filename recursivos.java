@@ -15,8 +15,17 @@ public static void main(String [] args){
     lista.add(1400);
     lista.add(643);
 
+    ArrayList<Integer> lista2 = new ArrayList<>();
+    lista2.add(50);
+    lista2.add(5);
+    lista2.add(94);
+    lista2.add(500);
+    lista2.add(945938);
+
+
     System.out.println("Somatorio da lista: " + somatorioLista(lista));
-    System.out.println("Maior número da lista: " + acharMaior(lista));
+    System.out.println("Maior número da lista: " + acharMaior(lista2));
+    System.out.println("Número de digitos de 4372: " + numeroDigitos(4372));
 }
 
 
@@ -122,14 +131,25 @@ static public int somatorioLista(ArrayList<Integer> numeros){
     return somatorioLista(numeros);
 }
 
+/*
+ Caso base | tamanho da lista == 1 -> retorna o único número
+ */
+
 static public int acharMaior(ArrayList<Integer> numeros){
     int tamanho = numeros.size();
     if (tamanho == 1) return numeros.get(0);
     else if (numeros.get(0) > numeros.get(1)) numeros.remove(1);
-        else numeros.remove(0);
-    acharMaior(numeros);
+        else numeros.remove(0); 
 
-    return 0;
-    
+        return acharMaior(numeros);
+}
+
+static public int numeroDigitos(int n){
+    int nDigitos = 1;
+    if ((n / 10) < 1) return nDigitos;
+    else{
+        n = n / 10;
+        return nDigitos = nDigitos + numeroDigitos (n);
+    }
 }
  
