@@ -144,6 +144,9 @@ static public int acharMaior(ArrayList<Integer> numeros){
         return acharMaior(numeros);
 }
 
+/*
+ Caso base | N / 10 < 1 -> 1 (NDigitos)
+ */
 static public int numeroDigitos(int n){
     int nDigitos = 1;
     if ((n / 10) < 1) return nDigitos;
