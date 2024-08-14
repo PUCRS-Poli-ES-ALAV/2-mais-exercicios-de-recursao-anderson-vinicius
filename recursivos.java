@@ -16,6 +16,7 @@ public static void main(String [] args){
     lista.add(643);
 
     System.out.println("Somatorio da lista: " + somatorioLista(lista));
+    System.out.println("Maior número da lista: " + acharMaior(lista));
 }
 
 
@@ -119,5 +120,16 @@ static public int somatorioLista(ArrayList<Integer> numeros){
     numeros.remove(0);
     numeros.remove(0);
     return somatorioLista(numeros);
+}
+
+static public int acharMaior(ArrayList<Integer> numeros){
+    int tamanho = numeros.size();
+    if (tamanho == 1) return numeros.get(0);
+    else if (numeros.get(0) > numeros.get(1)) numeros.remove(1);
+        else numeros.remove(0);
+    acharMaior(numeros);
+
+    return 0;
+    
 }
  
